@@ -18,9 +18,9 @@ df['Stars']= df['Stars'].astype(str).astype(int)
 st.set_page_config(page_title='BDC 2021', layout="wide")
 
 st.title('Business Data Challenge')
+st.subheader('Challenge from VVA')
 image = Image.open('banner.jpg')
 st.image(image)
-st.subheader('Challenge from VVA')
 st.markdown('Group H')
 
 st.markdown('**Data Explorer**')
