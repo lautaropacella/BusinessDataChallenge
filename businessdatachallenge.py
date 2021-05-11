@@ -20,8 +20,8 @@ st.set_page_config(page_title='BDC 2021', layout="wide")
 st.title('Business Data Challenge')
 st.subheader('Challenge from VVA')
 st.markdown('Group H')
-
-
+image = Image.open('banner.jpg')
+st.image(image)
 st.markdown('**Data Explorer**')
 st.sidebar.markdown("**Stars**")
 stars = st.sidebar.slider("", value=0, min_value=1, max_value=5, step=1)
