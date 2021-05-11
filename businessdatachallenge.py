@@ -27,8 +27,11 @@ st.sidebar.markdown("**Stars**")
 stars = st.sidebar.slider("", value=0, min_value=1, max_value=5, step=1)
 st.sidebar.markdown("**Name**")
 names = st.sidebar.text_input('')
-
-if (stars == 0) & (names == ''):
+st.sidebar.markdown("**Word in Review**")
+reviews_op = st.sidebar.text_input(' ')
+if (stars == 0) & (names == '') & (reviews_op == ''):
     st.write(df)
+elif (stars == 0) & (names != '') or (reviews_op != ''):
+    st.write(df[( df.Name.str.contains(names)) & ( df.Review.str.contains(reviews_op))])
 else:
-    st.write(df[(df.Stars==stars) & ( df.Name.str.contains(names))])
+    st.write(df[(df.Stars==stars) & ( df.Name.str.contains(names)) & ( df.Review.str.contains(reviews_op))])
